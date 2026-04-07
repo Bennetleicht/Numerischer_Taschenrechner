@@ -254,10 +254,10 @@ def main():
     frames["interpolation"] = create_simple_menu_frame(
         fenster, button_font, "Interpolation",
         [
-            ("Bezierkurven", ("action", lambda: print("Bezierkurven"))),
-            ("Polynominterpolation", ("action", lambda: print("Polynominterpolation"))),
-            ("Lagrange-Polynome", ("action", lambda: print("Lagrange-Polynome"))),
-            ("Spline-Interpolation", ("action", lambda: print("Spline-Interpolation"))),
+            ("Bézierkurven",        ("action", lambda: launch_method(os.path.join("Interpolation", "bezier_method.py")))),
+            ("Polynominterpolation",("action", lambda: launch_method(os.path.join("Interpolation", "polynom_method.py")))),
+            ("Lagrange-Polynome",   ("action", lambda: launch_method(os.path.join("Interpolation", "lagrange_method.py")))),
+            ("Spline-Interpolation",("action", lambda: launch_method(os.path.join("Interpolation", "spline_method.py")))),
         ],
         show_frame, go_back
     )
@@ -265,8 +265,8 @@ def main():
     frames["integration"] = create_simple_menu_frame(
         fenster, button_font, "Integration",
         [
-            ("Newton-Cotes-Regeln", ("action", lambda: print("Newton-Cotes-Regeln"))),
-            ("Gauss-Legendre-Quadratur", ("action", lambda: print("Gauss-Legendre-Quadratur"))),
+            ("Newton-Cotes-Regeln", ("action", lambda: launch_method(os.path.join("Integration", "newton_cotes_method.py")))),
+            ("Gauss-Legendre-Quadratur", ("action", lambda: launch_method(os.path.join("Integration", "gauss_legendre_method.py")))),
         ],
         show_frame, go_back
     )
@@ -274,30 +274,8 @@ def main():
     frames["dgl"] = create_simple_menu_frame(
         fenster, button_font, "DGL",
         [
-            ("Einschrittverfahren", ("frame", "dgl_einschritt")),
-            ("Mehrschrittverfahren", ("frame", "dgl_mehrschritt")),
-        ],
-        show_frame, go_back
-    )
-
-    frames["dgl_einschritt"] = create_simple_menu_frame(
-        fenster, button_font, "DGL - Einschrittverfahren",
-        [
-            ("Explizites Euler-Verfahren", ("action", lambda: print("Explizites Euler"))),
-            ("Heun-Verfahren", ("action", lambda: print("Heun-Verfahren"))),
-            ("Modifiziertes Euler-Verfahren", ("action", lambda: print("Modifiziertes Euler"))),
-            ("Runge-Kutta-Verfahren (4)", ("action", lambda: print("Runge-Kutta (4)"))),
-            ("Implizites Euler-Verfahren", ("action", lambda: print("Implizites Euler"))),
-        ],
-        show_frame, go_back
-    )
-
-    frames["dgl_mehrschritt"] = create_simple_menu_frame(
-        fenster, button_font, "DGL - Mehrschrittverfahren",
-        [
-            ("BDF-Verfahren", ("action", lambda: print("BDF-Verfahren"))),
-            ("Adams-Bashforth explizit", ("action", lambda: print("Adams-Bashforth explizit"))),
-            ("Adams-Bashforth implizit", ("action", lambda: print("Adams-Bashforth implizit"))),
+            ("Einschrittverfahren", ("action", lambda: launch_method(os.path.join("DGL", "Einschritt", "einschritt_method.py")))),
+            ("Mehrschrittverfahren", ("action", lambda: launch_method(os.path.join("DGL", "Mehrschritt", "mehrschritt_method.py")))),
         ],
         show_frame, go_back
     )
