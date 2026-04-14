@@ -16,12 +16,14 @@ from sympy.parsing.sympy_parser import (
 
 from gauss_legendre_solver import Gauss_Legendre_Solver
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'Nullstellen')))
-from plotters_mpl import GaussLegendrePlotter
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'plotter')))
+from integrations_plotter import GaussLegendrePlotter
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'base_gui')))
 from latex_renderer import render_formula_block, render_formula
 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from GUI import maximize_and_lock
 
 #  Sympy-Parser 
 _XSYM = sp.Symbol("x")
@@ -249,12 +251,8 @@ class GaussLegendreGUI(tk.Tk):
         self._calc_step = 0
 
         self.title(self.method.title)
-        self.minsize(1000, 600)
-        self.state("zoomed")
-        try:
-            self.attributes("-zoomed", True)
-        except tk.TclError:
-            pass
+
+        maximize_and_lock(self)
 
         self._build_ui()
 

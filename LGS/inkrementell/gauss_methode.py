@@ -1,5 +1,7 @@
 from __future__ import annotations
-
+import sys, os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 from typing import List, Optional, Tuple
 
 from gauss_solver import GaussEliminationSolver, Step

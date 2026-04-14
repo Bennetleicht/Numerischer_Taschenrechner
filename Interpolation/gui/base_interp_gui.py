@@ -9,8 +9,8 @@ from PIL import ImageTk
 import sys
 import os
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'Nullstellen')))
-from Nullstellen.plotters_mpl import InterpolationPlotter
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'plotter')))
+from interpolations_plotter import InterpolationPlotter
 
 from base_gui.gui_utils import ScrollableFrame, maximize_window
 

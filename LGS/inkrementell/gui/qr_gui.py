@@ -3,7 +3,7 @@ from tkinter import ttk, messagebox
 from typing import List, Optional, Dict, Tuple, Any
 
 from qr_solver import QRGivensSolver, Step
-from gui.gui_utils import ScrollableFrame, _maximize_window
+from base_gui.gui_utils import ScrollableFrame, _maximize_window
 
 class QRGivensStepper(QRGivensSolver):
     pass

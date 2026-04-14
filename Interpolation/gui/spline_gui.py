@@ -271,7 +271,7 @@ class SplineGUI(BaseInterpGUI):
         ttk.Label(right, text="Plot", style="Title.TLabel").grid(
             row=0, column=0, sticky="w", pady=(0, 6))
 
-        from Nullstellen.plotters_mpl import InterpolationPlotter
+        from plotter.interpolations_plotter import InterpolationPlotter
 
         self.plotter = InterpolationPlotter(right)
         self.plotter.widget().grid(row=1, column=0, sticky="nsew")

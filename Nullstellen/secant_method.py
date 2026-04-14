@@ -68,7 +68,7 @@ class SecantMethod:
 
 
 def main():
-    from gui_app import GenericMethodGUI
+    from ns_base_gui import GenericMethodGUI
     app = GenericMethodGUI(SecantMethod())
     app.mainloop()
 

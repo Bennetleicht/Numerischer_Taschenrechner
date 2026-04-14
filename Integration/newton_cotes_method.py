@@ -16,11 +16,14 @@ from sympy.parsing.sympy_parser import (
 
 from newton_cotes_solver import Newton_Cotes_Solver
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'Nullstellen')))
-from plotters_mpl import NewtonCotesPlotter
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'plotter')))
+from integrations_plotter import NewtonCotesPlotter
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'base_gui')))
 from latex_renderer import render_formula_block, render_formula
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from GUI import maximize_and_lock
 
 
 verfahren: str = "Trapezregel"
@@ -471,12 +474,7 @@ class NewtonCotesGUI(tk.Tk):
         self._plot_ready = False
 
         self.title(self.method.title)
-        self.minsize(1000, 600)
-        self.state("zoomed")
-        try:
-            self.attributes("-zoomed", True)
-        except tk.TclError:
-            pass
+        maximize_and_lock(self)
 
         self._build_ui()
 

@@ -8,7 +8,10 @@ from tkinter import ttk, messagebox
 
 from bezier_method import BezierMethod
 from bezier_solver import BezierSolver
-from Nullstellen.plotters_mpl import InterpolationPlotter
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'plotter')))
+from plotter.interpolations_plotter import InterpolationPlotter
+
 from base_gui.gui_utils import ScrollableFrame
 from gui.base_interp_gui import (BaseInterpGUI, render_formula_block)
 
@@ -299,7 +302,7 @@ class BezierGUI(BaseInterpGUI):
         ttk.Label(right, text="Plot",
                   style="Title.TLabel").grid(row=0, column=0, sticky="w",
                                               pady=(0, 6))
-        from Nullstellen.plotters_mpl import InterpolationPlotter
+        from plotter.interpolations_plotter import InterpolationPlotter
 
         self.plotter = InterpolationPlotter(right)
         self.plotter.widget().grid(row=1, column=0, sticky="nsew")

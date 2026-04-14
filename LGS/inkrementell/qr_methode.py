@@ -1,5 +1,7 @@
 from typing import Any, Dict, List, Optional, Tuple
-
+import sys, os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 from qr_solver import QRGivensSolver, Step
 
 

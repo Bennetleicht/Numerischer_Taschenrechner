@@ -41,7 +41,7 @@ class HeronMethod:
 
 
 def main():
-    from gui_app import GenericMethodGUI
+    from ns_base_gui import GenericMethodGUI
     app = GenericMethodGUI(HeronMethod())
     app.mainloop()
 

@@ -72,7 +72,8 @@ class NewtonMethod:
 
 
 def main():
-    from gui_app import GenericMethodGUI
+
+    from ns_base_gui import GenericMethodGUI
     app = GenericMethodGUI(NewtonMethod())
     app.mainloop()
 

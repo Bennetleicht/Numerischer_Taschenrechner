@@ -62,7 +62,7 @@ class BisectionMethod:
 
 # startet die Gui
 def main():
-    from gui_app import GenericMethodGUI
+    from ns_base_gui import GenericMethodGUI
     app = GenericMethodGUI(BisectionMethod())
     app.mainloop()
 
